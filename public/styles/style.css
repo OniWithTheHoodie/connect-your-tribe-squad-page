@@ -97,8 +97,8 @@ img {
         display: flex;
         flex-direction: column;
         gap: 2em;
-        width: 50em;
-        height: 70em;
+        width: 40em;
+        height: 60em;
         border: 0.2em solid black;
         margin-top: 2em;
     }
@@ -107,8 +107,8 @@ img {
         display: flex;
         flex-direction: column;
         gap: 2em;
-        width: 50em;
-        height: 70em;
+        width: 40em;
+        height: 60em;
         border: 0.2em solid black;
         margin-top: 2em;
     }
