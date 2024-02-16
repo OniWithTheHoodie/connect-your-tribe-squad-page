@@ -1,0 +1,250 @@
+/* google font link adres zorgt er voor dat ik daarmee connectie mee kan maken  */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+:root {
+    
+  }
+
+/* weg halen van onnodige margin en padding */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* google font text  */
+
+body{
+    
+}
+
+/*******************************************************************
+                                                                   * 
+                            MOBILE                                 *
+                                                                   *
+********************************************************************/
+article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 20em;
+    height: 45em;
+    border: 0.2em solid black;
+    margin-top: 2em;
+}
+
+
+
+.point-a {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    margin-top: 1.5em;
+}
+
+.pulse {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    animation: pulseAnimate 4s ease-out infinite;
+}
+
+@keyframes pulseAnimate {
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+.line {
+    border-left: 0.2em solid black;
+    width: 1em;
+    height: 4.5em;
+    margin-left: 0.4em;
+    bottom: 2.5em;
+    position: relative;
+}
+
+img {
+    width: 15em;
+    height: 12.5em;
+    margin-top: 2em;
+}
+
+/*******************************************************************
+                                                                   * 
+                            TABLET                                 *
+                                                                   *
+********************************************************************/
+@media (min-width: 45em) {
+    article {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        width: 50em;
+        height: 70em;
+        border: 0.2em solid black;
+        margin-top: 2em;
+    }
+
+    .cards-x {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        width: 50em;
+        height: 70em;
+        border: 0.2em solid black;
+        margin-top: 2em;
+    }
+
+
+    .point-a {
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        background-color: black;
+        margin-top: 1.5em;
+    }
+    
+    .pulse {
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        background-color: black;
+        animation: pulseAnimate 4s ease-out infinite;
+    }
+    
+    @keyframes pulseAnimate {
+        100% {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+    
+    .line {
+        border-left: 0.2em solid black;
+        width: 1em;
+        height: 4.5em;
+        margin-left: 0.4em;
+        bottom: 2.5em;
+        position: relative;
+    }
+    
+    img {
+        width: 30em;
+        height: 20em;
+        margin-top: 2em;
+    }
+}
+
+/*******************************************************************
+                                                                   * 
+                            DESKTOP                                *
+                                                                   *
+********************************************************************/
+@media (min-width: 75em) {
+    article {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin-left: 1em;
+        justify-content: center;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 35em;
+        height: 35em;
+        border: 0.2em solid black;
+        margin: 4em 30em 0em 0em;
+    }
+
+    .cards {
+        
+    }
+
+    .cards-x {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 35em;
+        height: 35em;
+        border: 0.2em solid black;
+        margin: 10em 0em 10em 40em;
+    }
+
+    .cards-desk {
+        margin-right: 20em;
+    }
+
+    .point-a {
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        background-color: black;
+        margin-top: 3em;
+        position: relative;
+    }
+    
+    .pulse {
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        background-color: black;
+        animation: pulseAnimate 4s ease-out infinite;
+    }
+    
+    @keyframes pulseAnimate {
+        100% {
+            opacity: 0;
+            transform: scale(2);
+        }
+    }
+    
+    .line {
+        border-left: 0.2em solid black;
+        width: 1em;
+        height: 16em;
+        margin-left: 0.4em;
+        top: 14.8em;
+        right: 35em;
+        position: relative;
+        transform: rotate(130deg);
+    }
+
+    .line-x {
+        border-left: 0.2em solid black;
+        width: 1em;
+        height: 20em;
+        margin-left: 0.4em;
+        top: 12.8em;
+        right: 35em;
+        position: relative;
+        transform: rotate(45deg);
+    }
+    
+    img {
+        width: 20em;
+        height: 20em;
+        margin-top: 2em;
+    }
+      
+}

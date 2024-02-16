@@ -1,9 +1,39 @@
 <%- include('./partials/head') %>
 
-<ul>
-  <% data.forEach(person => { %>
-  <li><a href="./person/<%= person.id %>"><%=person.name %></a></li>
-  <% }) %>
-</ul>
+<% data.forEach(person => { %>
+
+    <% if(person.name) { %>
+    <article>
+        <div class="cards">
+            <figure>
+                <img src="<%= person.avatar %>" alt="">
+            </figure>
+            <a href="./person/<%= person.name %>"><%= person.name %></a>
+            <h2>squad</h2>
+            <h2>Github:</h2>
+
+            <p>bio:</p>
+
+        </div>
+
+        <div class="point-a">
+            <div class="pulse"></div>
+                <div class="line">   
+                </div>
+        </div>
+
+        
+    </article>
+    <% } %>
+
+
+</article>
+<% }) %>
 
 <%- include('./partials/foot') %>
+
+
+    
+      
+    
+ 
