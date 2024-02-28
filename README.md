@@ -1,32 +1,9 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+Voor de opdracht waar de squadpage mee word gemaakt word Node.js, Express en ejs gebruikt
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+Wat is Node.JS
 
-## Inhoudsopgave
+Met Node.js kun je met JavaScript een server maken. Node.js is een runtime-omgeving waarin je programma's of applicaties kunt draaien. Hierdoor stelt Node.js ontwikkelaars in staat JavaScript buiten de browser, zoals Firefox of Google Chrome, uit te voeren. Node.js maakt hiervoor gebruik van de V8-engine, die de kern vormt van Google Chrome buiten de webbrowser. Node.js heeft veel aandacht gekregen van ontwikkelaars omdat ze hiermee server-side code kunnen schrijven in JavaScript zonder een andere taal te hoeven leren.
 
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+Node.js biedt ook de mogelijkheid om verschillende npm-pakketten te gebruiken, waardoor het de gemakkelijkste en snelste manier is om JavaScript-modules te gebruiken. Een module is een blok code dat een bepaalde taak kan uitvoeren, zoals een rekenmachine, to-do-lijst, enzovoort. Als een van deze modules is geregistreerd bij de NPM (Node Package Manager), kun je deze eenvoudig integreren in een HTML-bestand. Als je bijvoorbeeld een rekenmachine aan je site wilt toevoegen om berekeningen te maken, hoef je niet elk codefragment zelf te schrijven. Je kunt een rekenmachinepakket installeren met NPM en integreren in je project.
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
-
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
-
-## Installatie
-<!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
-
-## Gebruik
-
-## Bronnen
-
-## Licentie
-
-This project is licensed under the terms of the [MIT license](./LICENSE).
+Frameworks zoals Nest.js en Express.js zijn erg populair geworden als gevolg hiervan, en veel bedrijven gebruiken Node.js als de ruggengraat van hun bedrijf. Dit komt doordat Node.js in één proces draait, wat betekent dat het veel verzoeken kan afhandelen op één server. Met Node.js kun je gegevens naar de server verzenden, waarna Node.js de ontvangen aanvraag verwerkt en opslaat in de database.
