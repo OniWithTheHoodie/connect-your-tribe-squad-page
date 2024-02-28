@@ -1,6 +1,6 @@
 Voor de opdracht waar de squadpage mee word gemaakt word Node.js, Express en ejs gebruikt
 
-Wat is Node.JS
+# Wat is Node.JS
 
 Met Node.js kun je met JavaScript een server maken. Node.js is een runtime-omgeving waarin je programma's of applicaties kunt draaien. Hierdoor stelt Node.js ontwikkelaars in staat JavaScript buiten de browser, zoals Firefox of Google Chrome, uit te voeren. Node.js maakt hiervoor gebruik van de V8-engine, die de kern vormt van Google Chrome buiten de webbrowser. Node.js heeft veel aandacht gekregen van ontwikkelaars omdat ze hiermee server-side code kunnen schrijven in JavaScript zonder een andere taal te hoeven leren.
 
