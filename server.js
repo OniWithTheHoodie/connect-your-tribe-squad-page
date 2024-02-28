@@ -1,28 +1,41 @@
+/*** Express setup & start ***/
+
+
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
+
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 
+/*** Routes & Data***/ 
+
+
 // Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/person/?filter={"squad_id"}:3')
+const squadData = await fetchJson(apiUrl + 'https://fdnd.directus.app/items')
+
+// Een array waar de berichten erin opgeslagen kan worden
+const messages = []
 
 // Maak een nieuwe express app aan
 const app = express()
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
+
 // Stel de map met ejs templates in
 app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources
 app.use(express.static('public'))
 
+app.use(express.urlencoded({extended:true}))
+
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
-  // Haal alle personen uit de FDND API op
+  // Haal alle personen uit de FDND API opm
   fetchJson(apiUrl + '/person/?filter={"squad_id":3}').then((data) => {
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
     response.render('index', data)
@@ -31,9 +44,340 @@ app.get('/', function (request, response) {
 
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
+
+  messages.push(request.body.bericht)
+
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Maak een GET route voor person met een request parameter id
 app.get('/person/:id', function (request, response) {

@@ -1,34 +1,38 @@
 <%- include('./partials/head') %>
 
-<% data.forEach(person => { %>
 
-    <% if(person.name) { %>
-    <article>
-        <div class="cards">
-            <figure>
-                <img src="<%= person.avatar %>" alt="">
-            </figure>
-            <a href="./person/<%= person.name %>"><%= person.name %></a>
-            <h2>squad</h2>
-            <h2>Github:</h2>
-
-            <p>bio:</p>
-
+<div class="container">
+    <div class="row">
+        <% data.forEach(person => { %> 
+            <% if (person.avatar) { %>
+            <div class="hexagon">
+            <img src="<%= person.avatar %>" alt="">
         </div>
+        <% } %>
+        <% }) %>
+        <div class="hexagon">
+            <p>link</p>
+        </div> 
+    </div>
+</div>
 
-        <div class="point-a">
-            <div class="pulse"></div>
-                <div class="line">   
-                </div>
-        </div>
+<h2>Laat een bericht achter</h2>
+<form method="POST" action="/">
+    <label>
+        Plaats een bericht:
+        <textarea required name="bericht"></textarea>
+    </label>
+    <button type="submit">Verstuur bericht</button>
+</form>
 
-        
-    </article>
-    <% } %>
+<h2>Geplaatste berichten</h2>
+<ul>
+    
+</ul>
 
 
-</article>
-<% }) %>
+
+
 
 <%- include('./partials/foot') %>
 
