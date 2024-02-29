@@ -10,14 +10,12 @@ import fetchJson from './helpers/fetch-json.js'
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 
+
 /*** Routes & Data***/ 
 
 
 // Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + 'https://fdnd.directus.app/items')
-
-// Een array waar de berichten erin opgeslagen kan worden
-const messages = []
+// const squadData = await fetchJson('https://fdnd.directus.app/items/squad')
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -33,360 +31,54 @@ app.use(express.static('public'))
 
 app.use(express.urlencoded({extended:true}))
 
-// Maak een GET route voor de index
-app.get('/', function (request, response) {
-  // Haal alle personen uit de FDND API opm
-  fetchJson(apiUrl + '/person/?filter={"squad_id":3}').then((data) => {
-    // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
-    response.render('index', data)
+// messages lege array waar de string bericht wordt doorgestuurd
+const messages = []
+
+//////////////////////////////////////////
+
+// Bericht 
+
+//////////////////////////////////////////
+
+// een functie waarbij ik met GET een functie aanmaak vanuit de root waar ik zeg haal data uit directus op en stuur die terug naar mij 
+// vervolgens in index.ejs word person en messages gerenderd
+app.get('/', function(request, response){
+  fetchJson('https://fdnd.directus.app/items/person').then((apiData) => {
+    response.render('index', {
+      persons: apiData.data,
+      messages: messages
+    })
   })
 })
 
-// Maak een POST route voor de index
+// met POST is er een functie vanuit de root vraag ik om een request en response dat terug gestuurt moet worden
+// in dit geval is het de berich die verstuurd word met consol.log kan ik een test maken door request.body te checken of 
+// het bericht werkeleijk word doorgevoerd
 app.post('/', function (request, response) {
-
+  console.log(request.body)
   messages.push(request.body.bericht)
 
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
-  response.redirect(303, '/')
+  // met response zeg ik voer uit het bericht dat is verstuurd als het is uitgevoerd ga je terug naar de root in dit geval index.ejs http 303 word gebruikt 
+  // als redirect status om naar de root te gaan
+  response.redirect(303,'/')
 })
 
+///////////////////////////////////////////////
 
+// Data dat Opgehaald wordt voor de hexagon
 
+//////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Maak een GET route voor person met een request parameter id
+// Get route functie waarbij er een request wordt gevraagd en de uitvoering moet zijn person:id word terug gestuurd met fetch JSON wordt elke persoon
+// opgehaald die in de directus data zit onder person en in mijn index heb ik aangegeven dat ik alleen de avatar uit de personen wil hebben die een avatar hebben.
 app.get('/person/:id', function (request, response) {
-  // Gebruik de request parameter id en haal de juiste persoon uit de FDND API op
+
   fetchJson(apiUrl + '/Person/' + request.params.id).then((data) => {
-    // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
+    // Renderd tot html index.ejs
     response.render('person', data)
   })
 })
+
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
@@ -396,3 +88,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+

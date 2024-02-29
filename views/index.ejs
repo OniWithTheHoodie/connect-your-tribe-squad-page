@@ -1,20 +1,37 @@
 <%- include('./partials/head') %>
 
+<section lang="nl">
 
+<h2>Squad page</h2>
+
+<form action="/" method="GET">
+    <label for="squad">Choose a squad:</label>
+    <select name="squad" id="squad">
+      <option value="squadD">D</option>
+      <option value="squadE">E</option>
+      <option value="squadF">F</option>
+    </select>
+  </form>
+
+  
 <div class="container">
     <div class="row">
-        <% data.forEach(person => { %> 
+        <!-- de data die gehaald wordt uit derictus word in een for each loop geplaats
+        met een variable "person" en vervolgens zeg ik als en er een data is ingevoerd in de avatar van directus
+        maak dan een nieuwe hexagon aan -->
+        <% persons.forEach(person => { %> 
             <% if (person.avatar) { %>
             <div class="hexagon">
-            <img src="<%= person.avatar %>" alt="">
-        </div>
-        <% } %>
-        <% }) %>
+                <img src="<%= person.avatar %>" alt="">
+            </div>
+            <% } %>
+            <% }) %> 
         <div class="hexagon">
             <p>link</p>
         </div> 
     </div>
 </div>
+
 
 <h2>Laat een bericht achter</h2>
 <form method="POST" action="/">
@@ -25,10 +42,20 @@
     <button type="submit">Verstuur bericht</button>
 </form>
 
-<h2>Geplaatste berichten</h2>
-<ul>
-    
-</ul>
+    <article>
+        <h2>Geplaatste berichten</h2>
+        
+        <!-- het is hier de bedoeling dat messages in een for each loop geplaats wordt
+        en het berichten blijf plaatsen de berichten is in server.js in lege array geplaats genaamd messages die data bericht
+        word dat in een nieuwe variable gezet genaamd message en wordt dan getoond in list -->
+            
+            <ol>
+            <% messages.forEach(message => { %>
+                <li><%= message %></li>
+            <% }) %>
+            </ol>
+    </article>    
+</section>
 
 
 
