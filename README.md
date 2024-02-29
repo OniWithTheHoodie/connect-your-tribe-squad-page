@@ -15,3 +15,7 @@ Het is een populair webtoepassingsframework voor Node.js, ontworpen om de ontwik
 # Wat is EJS ?
 
 Het is een eenvoudige template-taal die je de mogelijkheid geeft om HTML te genereren met JavaScript, zonder enige ombuiging of verandering van de flow. De voordelen bij het gebruik van EJS zijn dat het verbonden is met Node.js, wat het prettig maakt om het te integreren. Met EJS kun je JavaScript-logica in HTML-tags plaatsen door gebruik te maken van EJS-syntax.
+
+# resultaat
+
+Ik heb voor mijn squadpage het ook gepubliseerd via render https://squadpagebylee.onrender.com/ 
